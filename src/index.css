@@ -1,13 +1,159 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* INTERRA TRUST BANK SYSTEM - NAVY BLUE THEME */
+
+:root {
+  --navy: #1A2A5E;
+  --navy-light: #243674;
+  --navy-dark: #0F1A3E;
+  --white: #FFFFFF;
+  --off-white: #F5F7FA;
+  --gray: #6B7280;
+  --success: #10B981;
+  --danger: #EF4444;
+  --warning: #F59E0B;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--off-white);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom Navbar Styling */
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Button Styling */
+.btn-navy {
+  background-color: var(--navy);
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-navy:hover {
+  background-color: var(--navy-light);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.btn-outline-navy {
+  background-color: transparent;
+  color: var(--navy);
+  border: 2px solid var(--navy);
+  padding: 10px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-navy:hover {
+  background-color: var(--navy);
+  color: white;
+}
+
+/* Form Styling */
+.form-control, .form-select {
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  padding: 12px 16px;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(26, 42, 94, 0.1);
+}
+
+/* Page Container */
+.page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--off-white) 0%, #E8EDF5 100%);
+}
+/* Security Badge Styles */
+.security-badge {
+  background: linear-gradient(135deg, #1A2A5E10, #1A2A5E05);
+  padding: 8px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+/* Password strength progress bar */
+.progress {
+  height: 6px;
+  border-radius: 3px;
+}
+
+.progress-bar-danger {
+  background-color: #EF4444;
+}
+
+.progress-bar-warning {
+  background-color: #F59E0B;
+}
+
+.progress-bar-success {
+  background-color: #10B981;
+}
+
+/* Input focus security indicator */
+.form-control:focus {
+  border-color: #1A2A5E;
+  box-shadow: 0 0 0 3px rgba(26, 42, 94, 0.2);
+}
+/* Button Styles */
+.btn-navy {
+  background-color: #1A2A5E;
+  color: white;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-navy:hover {
+  background-color: #243674;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-outline-navy {
+  background-color: transparent;
+  color: #1A2A5E;
+  border: 2px solid #1A2A5E;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-navy:hover {
+  background-color: #1A2A5E;
+  color: white;
+  transform: translateY(-2px);
 }
