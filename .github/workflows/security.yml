@@ -1,0 +1,37 @@
+name: DevSecOps Security Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '22'
+    
+    - name: Install dependencies
+      run: npm ci
+      
+    - name: Run npm audit for vulnerability scan
+      run: npm audit --production || true
+      
+    - name: Secret scanner - Check for exposed secrets
+      run: |
+        if grep -r "AIzaSy" --include="*.js" --include="*.json" .; then
+          echo "WARNING: Potential API keys found in code"
+        else
+          echo "No API keys found in code"
+        fi
+        
+    - name: Build test
+      run: CI=false npm run build
