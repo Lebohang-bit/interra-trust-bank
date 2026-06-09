@@ -10,8 +10,7 @@ jobs:
       - run: CI=true npm test -- --coverage --watchAll=false --passWithNoTests
       - run:
           name: Install SonarScanner
-          command: |
-            npm install -g sonarqube-scanner
+          command: npm install -g sonarqube-scanner
       - run:
           name: Run SonarCloud Scan
           command: |
