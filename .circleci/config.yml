@@ -1,0 +1,24 @@
+version: 2.1
+
+orbs:
+  sonarcloud: sonarsource/sonarcloud@2.0.0
+
+jobs:
+  scan:
+    docker:
+      - image: cimg/node:18.18.0
+    steps:
+      - checkout
+      - run: npm install
+      - run: CI=true npm test -- --coverage --watchAll=false --passWithNoTests
+      - run:
+          name: SonarCloud Scan
+          command: |
+            npx sonar-scanner \
+              -Dsonar.projectKey=lebohang-bit_interra-trust-bank \
+              -Dsonar.organization=lebohang-bit
+
+workflows:
+  ci:
+    jobs:
+      - scan
